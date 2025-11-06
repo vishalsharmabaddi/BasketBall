@@ -1,0 +1,141 @@
+:root {
+  --color-primary: #00a651;
+  --color-secondary: #1a1a1a;
+  --color-bg: #0d1b2a;
+  --color-card: #1b263b;
+  --color-text: #e0e1dd;
+  --color-btn-p1: #ff6b35;
+  --color-btn-p2: #4ecdc4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial Black', Arial, sans-serif;
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.scoreboard > div {
+  background: var(--color-card);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  min-width: 250px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.scoreboard > div:first-child {
+  border-top: 4px solid var(--color-btn-p1);
+}
+
+.scoreboard > div:last-child {
+  border-top: 4px solid var(--color-btn-p2);
+}
+
+h1 {
+  color: var(--color-text);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#player1, #player2 {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin: 30px 0;
+  background: rgba(0, 166, 81, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  border: 3px solid var(--color-primary);
+  text-shadow: 0 0 20px rgba(0, 166, 81, 0.5);
+}
+
+button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px 25px;
+  margin: 8px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.scoreboard > div:first-child button {
+  background: var(--color-btn-p1);
+  color: white;
+}
+
+.scoreboard > div:first-child button:hover {
+  background: #ff8c61;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 107, 53, 0.4);
+}
+
+.scoreboard > div:last-child button {
+  background: var(--color-btn-p2);
+  color: white;
+}
+
+.scoreboard > div:last-child button:last-child {
+  background: var(--color-btn-p2);
+}
+
+.scoreboard > div:last-child button:hover {
+  background: #6fe0d8;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(78, 205, 196, 0.4);
+}
+
+button:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .scoreboard {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .scoreboard > div {
+    min-width: 100%;
+  }
+
+  #player1, #player2 {
+    font-size: 4rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
